@@ -53,6 +53,17 @@
  * @return {Number} факториал числа.
  */
 
+function factorial(n) {
+	
+	var fac = 1;
+	
+	for(var i = 1; i<=n; i++) {
+		fac = fac * i;
+	}
+	
+	return fac;
+}
+
 /**
  * Задание 2. Создать функцию nfib для подсчета n-го числа Фибоначчи
  * (http://ru.wikipedia.org/wiki/Числа_Фибоначчи)
@@ -67,3 +78,16 @@
  *
  * @return {Number} Число Фибоначчи.
  */
+
+function nfib(n) {
+	var a = new Array(n+1);
+	
+	a[0] = 0;
+	a[1] = 1;
+	
+	for(var i = 2; i<=n; i++) {
+		a[i] = a[i-1] + a[i-2];
+	}
+	
+	return a[n];
+}
