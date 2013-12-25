@@ -16,10 +16,11 @@
  * @param {String} name Имя воина.
  * @param {Number} level Уровень воина.
  */
-function Warrior(name, level){
-  // Ваш код здесь...
+ 
+function Warrior(name, level) {
   this.name = name;
   this.level = level;
+  this.code = "";
 }
 
 /**
@@ -36,7 +37,7 @@ function Warrior(name, level){
  * @return {Number} Урон, наносимой атакой.
  */
 Warrior.prototype.attack = function() {
-  // Ваш код здесь...
+  return this.level * 0.1;
 };
 
 /**
@@ -53,17 +54,28 @@ Warrior.prototype.attack = function() {
  * @param {String} name Имя джедая.
  * @param {Number} level Уровень джедая.
  */
+
 function Jedi (name, level) {
-  // Ваш код здесь...
+  Warrior.apply(this, arguments);
+  this.sideOfForce = "light";
+  this.сode = "Нет волнения — есть покой...";
 }
+
+Jedi.prototype = Object.create(Warrior.prototype);
 
 /**
  * Создает экземпляр ситха
  * @param {String} name Имя ситха.
  * @param {Number} level Уровень ситха.
  */
-// Ваш код здесь...
+ 
+function Sith(name, level) {
+  Warrior.apply(this, arguments);
+  this.sideOfForce = "dark";
+  this.сode = "Спокойствие — ложь, есть только страсть...";
+}
 
+Sith.prototype = Object.create(Warrior.prototype);
 
 /**
  * Метод произнесения кодекса.
@@ -72,8 +84,10 @@ function Jedi (name, level) {
  * @name Warrior.getCode
  * @return {String} Кодекс воина.
  */
-// Ваш код здесь...
-
+ 
+Warrior.prototype.getCode = function () {
+  return this.warriorCode;
+};
 
 /**
  * Задание 4. Добавить метод toLightSide классу Jedi.
@@ -96,8 +110,8 @@ function Jedi (name, level) {
  * @throws Error("Invalid argument")
  * Если призываемый объект не является ситхом, выкидывается исключение.
  */
-// Ваш код здесь...
-
+ 
+Jedi.prototype.toLightSide = changeSideOfForce;
 
 /**
  * Задание 5. Добавить метод toDarkSide классу Sith.
@@ -117,4 +131,5 @@ function Jedi (name, level) {
  * @throws Error("Invalid argument")
  * Если призываемый объект не является джедаем, выкидывается исключение.
  */
-// Ваш код здесь...
+ 
+Sith.prototype.toDarkSide = changeSideOfForce;
