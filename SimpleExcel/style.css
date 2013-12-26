@@ -1,0 +1,43 @@
+body {
+	text-align: center
+}
+
+table {
+	margin: auto;
+	border-spacing: 0;
+	border-collapse: collapse;
+	background-color: #EBEBEB;
+	border: 2px solid green;
+	vertical-align: middle
+}
+
+td {
+	border: 1px green solid;
+	padding: 0;
+	text-align: center;
+	font-size:16pt;
+	color: red
+}
+
+input {
+	position:relative;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	font-size: 14pt;
+	border: 1px gray solid
+}
+
+.tools {
+	margin: 10px 0 10px 0;
+	font-size: 15pt
+}
+
+.tools a {
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: green;
+	text-decoration: none;
+}
